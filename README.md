@@ -3,7 +3,7 @@ Playbook with Ansible tasks to setup some settings on the KVM.
 
 Run the command in the terminal:
 ```bash
-  ansible-playbook kvm_setup.yml -e "node=kvm-07 vm_id=901 hotplug=disk,network,cpu storage_pool=Ceph_Silver"
+  ansible-playbook kvm_setup.yml -e "node=kvm-07 vm_id=901 hotplug=disk,network,cpu storage_pool=Ceph_Gold"
 ```
 
 # Tasks:
@@ -14,6 +14,6 @@ Run the command in the terminal:
 
 ### 3. Set the Cloud-Init settings.
 
-# Created by: 
+# Created by:
 
 1. Luciano Sampaio.
