@@ -6,7 +6,8 @@ Run the command in the terminal:
   ansible-playbook kvm_setup.yml -e "node=kvm-07 vm_id=901 hotplug=disk,network,cpu storage_pool=Ceph_Gold"
 ```
 
-# Tasks:
+#
+### Tasks:
 
 ### 1. Remove the CDROM.
 
@@ -14,6 +15,7 @@ Run the command in the terminal:
 
 ### 3. Set the Cloud-Init settings.
 
-# Created by:
+#
+### Created by:
 
 1. Luciano Sampaio.
