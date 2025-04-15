@@ -1,0 +1,6 @@
+---
+- name: "Setting CPU Type"
+  when: vm_id is defined and cpu_type is defined
+  ansible.builtin.command: "qm set {{ vm_id }} --cpu {{ cpu_type }}"
+  register: "output_cpu_type"
+  changed_when: output_cpu_type.rc == 0 and output_cpu_type.stderr == ""
