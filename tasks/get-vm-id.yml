@@ -1,0 +1,15 @@
+---
+- name: "Getting VM ID by name"
+  when: vm_id | default(0) == 0
+  ansible.builtin.shell: >-
+    set -o pipefail && \
+    qm list | grep '{{ vm_name }}' | awk '{print $1}'
+  args:
+    executable: "/usr/bin/bash"
+  register: "vm_id_output"
+  changed_when: false
+
+- name: "Set vm_id fact"
+  when: vm_id | default(0) == 0
+  ansible.builtin.set_fact:
+    vm_id: "{{ vm_id_output.stdout }}"
