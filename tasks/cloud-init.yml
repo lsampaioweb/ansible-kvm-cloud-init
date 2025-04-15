@@ -1,13 +1,6 @@
 ---
-- name: "Setting ide3 as the cloud-init drive"
-  ansible.builtin.command: "qm set {{ vm_id }} --ide3 {{ storage_pool }}:cloudinit,media=cdrom"
-  register: "output_cloud_init_drive"
-  changed_when: output_cloud_init_drive.rc == 0 and output_cloud_init_drive.stderr == ""
-  failed_when: (output_cloud_init_drive.rc != 0) and 'File exists' not in output_cloud_init_drive.stderr
-  when: vm_id is defined and storage_pool is defined
-
 - name: "Setting DHCP"
+  when: vm_id is defined
   ansible.builtin.command: "qm set {{ vm_id }} --ipconfig0 ip=dhcp"
   register: "output_cloud_init"
   changed_when: output_cloud_init.rc == 0 and output_cloud_init.stderr == ""
-  when: vm_id is defined
