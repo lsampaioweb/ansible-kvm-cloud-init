@@ -9,7 +9,7 @@
   register: "vm_id_output"
   changed_when: false
 
-- name: "Set vm_id fact"
+- name: "Setting vm_id fact"
   when: vm_id | default(0) == 0
   ansible.builtin.set_fact:
     vm_id: "{{ vm_id_output.stdout }}"
