@@ -3,3 +3,6 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# The AI custom files should be ignored.
+.github/
